@@ -5,7 +5,7 @@ export const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log(userName, email, password);
@@ -15,16 +15,16 @@ export const SignUp = () => {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
         userName,
         email,
-        password
-      })
+        password,
+      }),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data, "userRegister");
         if (data.status === "ok") {
           alert("Registration Successful");
@@ -43,7 +43,7 @@ export const SignUp = () => {
           type="text"
           className="form-control"
           placeholder="Enter Username"
-          onChange={e => setUserName(e.target.value)}
+          onChange={(e) => setUserName(e.target.value)}
         />
       </div>
 
@@ -53,7 +53,7 @@ export const SignUp = () => {
           type="email"
           className="form-control"
           placeholder="Enter email"
-          onChange={e => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
 
@@ -63,7 +63,7 @@ export const SignUp = () => {
           type="password"
           className="form-control"
           placeholder="Enter password"
-          onChange={e => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
 
